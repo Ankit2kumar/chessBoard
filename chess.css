@@ -1,0 +1,22 @@
+body {
+	background-color: aqua;
+	background-attachment: fixed;
+}
+.row {
+	display: table-row;
+	padding: 10rem;
+	margin: 10rem;
+}
+.cell {
+	display: table-cell;
+}
+#chessBoard {
+	margin: 300px;
+	padding: 100px;
+}
+.even {
+	background-color: rgb(85, 149, 128);
+}
+.odd {
+	background-color: rgb(184, 152, 66);
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ChessBoard</title>
+		<link rel="stylesheet" href="chess.css" />
+	</head>
+
+	<body>
+		<div id="chessBoard"></div>
+
+		<script>
+			const boardCreator = () => {
+				let mainParent = document.querySelector('#chessBoard');
+				for (let rowIndex = 1; rowIndex <= 8; rowIndex++) {
+					let myRow = document.createElement('div');
+					myRow.classList.add('row');
+					myRow.innerText = rowIndex;
+					//myRow.style.backgroundColor = 'green';
+					mainParent.appendChild(myRow);
+					for (let colIndex = 1; colIndex <= 8; colIndex++) {
+						let myCell = document.createElement('div');
+						myCell.style.width = '50px';
+						myCell.style.height = '50px';
+						myCell.innerText = colIndex;
+						myCell.classList.add('cell');
+						//myCell.style.backgroundColor = 'red';
+						myRow.appendChild(myCell);
+
+						if (rowIndex % 2 === 0 && colIndex % 2 === 0) {
+							myCell.classList.add('even');
+							myRow.classList.add('even');
+						} else myCell.classList.add('odd');
+						myRow.classList.add('odd');
+					}
+				}
+			};
+			boardCreator();
+		</script>
+	</body>
+</html>
